@@ -13,7 +13,7 @@ class FetchArmTorqueController {
     FetchArmTorqueController() {
         num_joints_ = 7;
         // Kr_ = Eigen::MatrixXd::Identity(num_joints_, num_joints_) * 20 ;
-        Kr_.diagonal() << 40, 60, 20, 30, 20, 30, 10 ;
+        Kr_.diagonal() << 20, 40, 20, 20, 20, 20, 10 ;
 
         //Resize input vectors to the controller
         q_.resize(num_joints_);
