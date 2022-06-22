@@ -1,0 +1,9 @@
+<launch>
+    <!-- Launch file to setup rqt_multiplot for various plots. Uncomment the specific lines to enable -->
+    <!-- TODO: Add command line args instead of having to comment out nodes -->
+    <node name="pos_err_plot" pkg="rqt_multiplot" type="rqt_multiplot" args="&#45;&#45;multiplot-config=$(find vis_dynamics)/config/pos_err_config.xml"/>
+    <!-- <node name="vel_err_plot" pkg="rqt_multiplot" type="rqt_multiplot" args="&#45;&#45;multiplot-config=$(find vis_dynamics)/config/vel_err_config.xml"/> -->
+    <node name="torque_err_plot" pkg="rqt_multiplot" type="rqt_multiplot" args="&#45;&#45;multiplot-config=$(find vis_dynamics)/config/torque_err_config.xml"/>
+    <!-- <node name="e_err_plot" pkg="rqt_multiplot" type="rqt_multiplot" args="&#45;&#45;multiplot-config=$(find vis_dynamics)/config/e_err_config.xml"/> -->
+    <!-- <node name="ed_err_plot" pkg="rqt_multiplot" type="rqt_multiplot" args="&#45;&#45;multiplot-config=$(find vis_dynamics)/config/ed_err_config.xml"/> -->
+</launch>

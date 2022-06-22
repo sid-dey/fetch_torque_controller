@@ -1,0 +1,12 @@
+<launch>    
+    <!--load in custom controller config-->
+    <rosparam file="$(find robot_controllers)/config/roahm_controllers.yaml" command="load"/> 
+
+    <!--We can use spawner tool to start running the custom controller-->
+    <node pkg="robot_controllers_interface" type="stop_controller.py" args="arm_controller/follow_joint_trajectory robot_controllers/FollowJointTrajectoryController" name="stop_arm_controller" />
+    <node pkg="robot_controllers_interface" type="stop_controller.py" args="arm_controller/gravity_compensation robot_controllers/GravityCompensation" name="stop_gravity_compensation" />
+    
+    <node pkg="robot_controllers_interface" type="start_controller.py" args="uarmtd_new/torque_controller robot_controllers/TorqueController" name="start_torque_controller"/>
+    <node pkg="fetch_roahm" type="fetch_planning_interface.py" args="uarmtd_new/torque_controller" name="fetch_planning_interface"/>
+
+</launch>
