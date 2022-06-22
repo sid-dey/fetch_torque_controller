@@ -23,7 +23,8 @@ class FetchArmTorqueController {
         qdd_des_.resize(num_joints_);  
     }
 
-    FetchArmTorqueController(int num_joints, Eigen::MatrixXd Kr) {
+    // FetchArmTorqueController(int num_joints, Eigen::MatrixXd Kr) {
+    FetchArmTorqueController(int num_joints, Eigen::DiagonalMatrix<double, 7> Kr) {
         num_joints_ = num_joints;
         Kr_ = Kr;        
 
